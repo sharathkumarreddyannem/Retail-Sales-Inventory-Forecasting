@@ -1,0 +1,75 @@
+Instructions to Run the Retail Sales Forecasting Project
+1. Clone the Repository
+git clone <your-repo-url>
+cd <your-repo-folder>
+
+2. Set Up Python Environment
+
+Create a virtual environment (optional but recommended):
+
+python -m venv env
+
+
+Activate it:
+
+Windows: env\Scripts\activate
+
+Mac/Linux: source env/bin/activate
+
+3. Install Dependencies
+
+Install all required libraries using requirements.txt:
+
+pip install -r requirements.txt
+
+4. Open the Notebook
+
+Open Retail_Sales_Forecasting.ipynb in Jupyter Notebook, JupyterLab, or Google Colab.
+
+If using Colab, you may need to install missing libraries in a cell:
+
+!pip install -q dash jupyter-dash pyngrok prophet tensorflow
+
+5. Run Forecasting Models
+
+Step through the notebook cells sequentially.
+
+Each block explains:
+
+Data generation & preprocessing
+
+Exploratory Data Analysis (EDA)
+
+Time series forecasting: ARIMA, Holt-Winters, Prophet, LSTM
+
+Inventory optimization calculation
+
+Dashboard creation using Dash
+
+6. Launch Interactive Dashboard
+
+If running locally, in VS Code or Jupyter:
+
+app.run(port=8050)
+
+
+If using Colab:
+
+Use pyngrok to expose the dashboard:
+
+from pyngrok import ngrok
+public_url = ngrok.connect(8050)
+print(public_url)
+
+
+Open the printed URL in your browser.
+
+7. Explore Scenarios
+
+Select forecast models from the dropdown
+
+Adjust forecast horizon
+
+Apply promotion or holiday effects
+
+View recommended inventory levels
